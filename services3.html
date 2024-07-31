@@ -1,0 +1,168 @@
+<div style="text-align: center; margin-top: 40px;">
+    <img style="width: 20%;" src="eps1.png">
+</div>
+<div style="text-align: center; margin-top: 40px;">
+    <a style="padding-right: 20px;" href="index.html">Home</a>
+    <a style="padding-right: 20px;" href="about.html">About</a>
+    <a style="padding-right: 20px;" href="services.html">Elektronske (Pdf) publikacije</a>
+    <a style="padding-right: 20px;" href="services3.html">Publikacije u Biblioteci</a>
+</div>
+<h2 style="font-size: 50px; text-align: center; "> BIBLIOTEKA </h2>
+
+<p style="font-size: 20px; text-align: center; line-height: 1; margin-right: 20px; ">
+    Pored izdanja u elektronskoj formi  imamo izdanja koja možemo preuzeti u  Biblioteci po vrstama publikacija to su Monografije, Standardi, Serijske Publikacije
+    ( Stručni Časopisi) kao i Beletristika.
+    Sve je to objedininjeno i napravljena je baza podataka  tj aplikacija u kojoj se registruje korisnik član ukoliko nije registrovan i može fizički da preuzme željenu publikaciju.
+    <br />  <span style="color: indianred"> Uživajte u naslovima i odaberite one koje želite.</span><br />
+</p><br />
+        <!--<a href="PDFTBLMON1 (1).doc" target="_blank">Download PDF MONOGRAFIJE</a>
+        <!--<a href="C:\New folder (4)\PDFTBLMON1 (1).doc">Open PDF</a>.--->
+        <!---href="DOCTYPE.docx">Read the full file</a>.--->
+           
+ <p style="font-size: 20px; text-align: center; line-height: 1.5; margin-right: 20px;">
+
+                <a href="MON.xls">Download MONOGRAFIJE</a><br />
+<a href="file:///C:/New%20folder%20(4)/MON.htm" target="_blank">Open  MONOGRAFIJE ( sa autorima )</a><br />
+    </p>
+   
+                <iframe src="file:///C:/New%20folder%20(4)/MON.htm" width="100%" height="230px"></iframe>
+
+
+<p style="font-size: 20px; text-align: center; line-height: 1.5; margin-right: 20px;">
+
+             
+
+
+  <a href="STAND.xls">Download STANDARDI</a><br />
+          <a href="file:///C:/New%20folder%20(4)/STAND.htm " target="_blank">Open PDF STANDARDI</a><br />
+                <iframe src="file:///C:/New%20folder%20(4)/STAND.htm " width="100%" height="230px"></iframe>  
+
+ </p>
+
+ <p style="font-size: 20px; text-align: center; line-height: 1.5; margin-right: 20px;">
+                <a href="SPUBL.xls">Download SERIJSKE PUBLIKACIJE</a><br />
+ <a href="file:///C:/New%20folder%20(4)/SPUBL.htm " target="_blank">Open PDF SERIJSKE PUBLIKACIJE</a><br />
+                <iframe src="file:///C:/New%20folder%20(4)/SPUBL.htm " width="100%" height="230px"></iframe>
+ </p> 
+ </p>
+
+ <p style="font-size: 20px; text-align: center; line-height: 1.5; margin-right: 20px;">
+                <a href="BEL.xls">Download BELETRISTIKA</a><br />
+ <a href="file:///C:/New%20folder%20(4)/BEL.htm " target="_blank">Open PDF BELETRISTIKA</a><br />
+<iframe src="file:///C:/New%20folder%20(4)/BEL.htm " width="100%" height="230px"></iframe>
+
+<!---<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Convert Excel to HTML Table using JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin
+="anonymous">
+
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+    	<h2 class="text-center mt-4 mb-4">Pretvori Excell file u html file</h2>
+    	<div class="card">
+    		<div class="card-header"><b>Izaberi Excell file</b></div>
+    		<div class="card-body">
+    			
+                <input type="file" id="excel_file" />
+
+    		</div>
+    	</div>
+        <div id="excel_data" class="mt-5"></div>
+    </div>
+</body>
+</html>
+
+<script>
+
+const excel_file = document.getElementById('excel_file');
+
+excel_file.addEventListener('change', (event) => {
+
+    if(!['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel'].includes(event.target.files[0].type))
+    {
+        document.getElementById('excel_data').innerHTML = '<div class="alert alert-danger">Only .xlsx or .xls file format are allowed</div>';
+
+        excel_file.value = '';
+
+        return false;
+    }
+
+    var reader = new FileReader();
+
+    reader.readAsArrayBuffer(event.target.files[0]);
+
+    reader.onload = function(event){
+
+        var data = new Uint8Array(reader.result);
+
+        var work_book = XLSX.read(data, {type:'array'});
+
+        var sheet_name = work_book.SheetNames;
+
+        var sheet_data = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[0]], {header:1});
+
+        if(sheet_data.length > 0)
+        {
+            var table_output = '<table class="table table-striped table-bordered">';
+
+            for(var row = 0; row < sheet_data.length; row++)
+            {
+
+                table_output += '<tr>';
+
+                for(var cell = 0; cell < sheet_data[row].length; cell++)
+                {
+
+                    if(row == 0)
+                    {
+
+                        table_output += '<th>'+sheet_data[row][cell]+'</th>';
+
+                    }
+                    else
+                    {
+
+                        table_output += '<td>'+sheet_data[row][cell]+'</td>';
+
+                    }
+
+                }
+
+                table_output += '</tr>';
+
+            }
+
+            table_output += '</table>';
+
+            document.getElementById('excel_data').innerHTML = table_output;
+        }
+
+        excel_file.value = '';
+
+    }
+
+});
+
+</script>
+
+
+    </p>            
+        <!--ms-excel:ofe|u|-->
+                Linkovi sa emailom za stručnu biblioteku <a href="mailto:natasa.vujovic@ods.rs?cc=maja.nenadic@eps.rs &Subject=pdf.publikacija &Body=Molim Vas pošaljite mi na mail sledeću pdf publikaciju"> Pošaljite email</a>
+            </p>
+
+        <!--- <div style="text-align: center; "><a style="font-size: 20px;  background-color: #ff7d7d; padding: 15px 35px 15px 35px; color: white " ; href="https://www.eps.rs/cir/Pages/dokumenti.aspx">Dokumenti epsa </a></div>
+        <br />
+        <hr />
+        <h4 style="font-size: 20px; text-align: center; "> PDF BIBLIOTEKA </h4>
+        <img style="width: 33%;" src="3.png">
+        <img style="width: 33%;" src="1.png">
+        <img style="width: 33%;" src="2.png">
+        <h1 style="font-size: 30px; text-align: center; "> Services </h1>
+        <div style="text-align: center; "><video src="video/The Tesla Files Tesla's Infamous Tower.mp4" controls/></div>--->

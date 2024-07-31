@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open and Download Documents</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Open and Download Documents</h1>
+    <p>
+        <!-- Link to view and download the Word document -->
+        <a href="PDFTBLMON.htm" id="word-document-link">
+            Click here to view and download the Word document
+        </a>
+    </p>
+    <p>
+        <!-- Link to view and download the Excel document -->
+        <a href="PDFTBLMON.htm" id="excel-document-link">
+            Click here to view and download the Excel document
+        </a>
+    </p>
+
+    <script>
+        function openAndDownload(docUrl) {
+           |<-- var viewUrl = 'https://view.officeapps.live.com/op/view.aspx?src=' + encodeURIComponent(docUrl);
+var viewUrl = 'file:///C:/New%20folder%20(4)/PDFTBLMON.htm;
+            // Open the document in a new tab
+            window.open(viewUrl, '_blank');
+
+            // Trigger download
+            var downloadLink = document.createElement('a');
+            downloadLink.href = PDFTBLMON.htm;
+            downloadLink.download = '';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        }
+
+      
+
+        document.getElementById('excel-document-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            openAndDownload('C:\New folder (4)\PDFTBLMON.xls');
+        });
+    </script>
+</body>
+</html>
